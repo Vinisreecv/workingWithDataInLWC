@@ -1,0 +1,17 @@
+<template>
+    <lightning-card title="Combination Calculator" icon-name="custom:custom14">
+        <div class="slds-p-horizontal_small">
+            <lightning-input label="Name One" value={nameOne} onchange={handleChange} data-id="nameOne"></lightning-input>
+            <lightning-input label="Name Two" value={nameTwo} onchange={handleChange} data-id="nameTwo"></lightning-input>
+            <lightning-input label="Name Three" value={nameThree} onchange={handleChange} data-id="nameThree"></lightning-input>
+            <lightning-input label="Name Four" value={nameFour} onchange={handleChange} data-id="nameFour"></lightning-input>
+            <lightning-button label="Calculate Combinations" onclick={calculateCombinations}></lightning-button>
+        </div>
+        <template if:true={combinations}>
+            <div class="slds-p-horizontal_small">
+                <p>Number of unique combinations: {combinations}</p>
+            </div>
+            
+        </template>
+    </lightning-card>
+</template>

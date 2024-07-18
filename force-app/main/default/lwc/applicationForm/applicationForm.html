@@ -1,0 +1,33 @@
+<template>
+        <lightning-card title="Combination Calculator" icon-name="custom:custom14">
+            <div class="slds-p-horizontal_small">
+                <lightning-input label="Name One" value={nameOne} onchange={handleChange} data-id="nameOne"></lightning-input>
+                <lightning-input label="Name Two" value={nameTwo} onchange={handleChange} data-id="nameTwo"></lightning-input>
+                <lightning-input label="Name Three" value={nameThree} onchange={handleChange} data-id="nameThree"></lightning-input>
+                <lightning-input label="Name Four" value={nameFour} onchange={handleChange} data-id="nameFour"></lightning-input>
+                <br>
+                <lightning-button label="Calculate Permutations" onclick={calculatePermutations}></lightning-button>
+                <lightning-button label="Calculate Combinations" onclick={calculateCombinations} class="slds-m-left_small"></lightning-button>
+            </div>
+    
+            <template if:true={permutations.length}>
+                <h2>Permutations</h2>
+                <lightning-datatable
+                    key-field="id"
+                    data={permutations}
+                    columns={columns}
+                    
+                ></lightning-datatable>
+            </template>
+    
+            <template if:true={combinations.length}>
+                <h2>Combinations</h2>
+                <lightning-datatable
+                    key-field="id"
+                    data={combinations}
+                    columns={columns}
+                ></lightning-datatable>
+               
+            </template>
+        </lightning-card>
+    </template>
